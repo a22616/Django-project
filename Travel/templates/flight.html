@@ -1,0 +1,89 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img src="https://source.unsplash.com/1700x600/?flight,aeroplane" class="d-block w-100" alt="...">
+<div class="carousel-caption d-none d-md-block">
+<div id="booking" class="section">
+    <div class="section-center">
+        <div class="container">
+            <div class="row">
+                <div class="booking-form">
+                    <div class="form-header">
+                        <h1>Make your reservation</h1>
+                    </div>
+                    <form method = "POST">
+                        {% csrf_token %}
+                        <p class="searchText"><strong>Search For Cheap Flights</strong></p>
+                        
+                        <!--First Row-->
+                        <div class="row mb-3 mt-3"> <label class="radiobtn" ><input type="radio" name = "gender1" id = "gender1" type ="text" value="One Way">One Way</label> <label class="radiobtn"><input type="radio" name = "gender1" id = "gender1" type ="text" value="Round Trip">Round Trip</label> </div>
+                        <!--Second Row-->
+                        <div class="form-group"> <input class="form-control"  name = "name" id = "name" type="text" placeholder="Enter your name..."> <span class="form-label">Name</span> </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group" > <select class="form-control" name = "from" id = "from" type = "text" required>
+                                    <option value="" disabled="" selected="">From City/Airport</option>
+                                    <option value="New Delhi">New Delhi</option>
+                                    <option value="Mumbai">Mumbai</option>
+                                    <option value="Bangalore">Bangalore</option>
+                                    </select> <span class="select-arrow"></span> <span class="form-label">Rooms</span> </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group" > <select class="form-control" name = "to" id = "to" type = "text" required>
+                                    <option value="" disabled="" selected="">From City/Airport</option>
+                                    <option value="New Delhi">New Delhi</option>
+                                    <option value="Mumbai">Mumbai</option>
+                                    <option value="Bangalore">Bangalore</option>
+                                    </select> <span class="select-arrow"></span> <span class="form-label">Adults</span> </div>
+                                </div>
+                            </div>
+                        <!--Third Row-->
+                        <div class="row">
+                             <div class="col-md-6">
+                                <div class="form-group" > <input class="form-control" name = "fromDate" id = "fromDate" type="date" required> <span class="form-label">Departing</span> </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group" > <input class="form-control" name = "toDate" id = "toDate" type="date" required> <span class="form-label">Arriving</span> </div>
+                            </div>
+                        </div>
+                        <!--Fifth Row-->
+                         <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group" > <select class="form-control" name = "rooms" id = "rooms" type = "text"required>
+                                        <option value="" selected hidden>no of rooms</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select> <span class="select-arrow"></span> <span class="form-label">Rooms</span> </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group" > <select class="form-control"name = "adults" id = "adults" type ="number" required>
+                                        <option value="" selected hidden>no of adults</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select> <span class="select-arrow"></span> <span class="form-label">Adults</span> </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group" > <select class="form-control" name = "children" id = "children" type ="number" required>
+                                        <option value="" selected hidden>no of children</option>
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select> <span class="select-arrow"></span> <span class="form-label">Children</span> </div>
+                            </div>
+                        </div>
+                        <div class="form-btn"> <button class="submit-btn">Submit</button> </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+{% endblock body %}
